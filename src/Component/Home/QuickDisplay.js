@@ -1,13 +1,12 @@
 import React from 'react';
-import './QuickSearch.css'
-import { Link } from 'react-router-dom';
+import './QuickSearch.css';
+import {Link} from 'react-router-dom';
 
+const QuickDisplay = (props) => {
 
-const QuickDisplay=(props)=>{
-
-    const listTrip=({tripData})=>{
-        if(tripData){
-            return tripData.map((item)=>{
+    const listTrip = ({tripdata}) => {
+        if(tripdata){
+            return tripdata.map((item) => {
                 return(
                     <Link to={`/list/${item.trip}`}>
                         <div className="tileContainer">
@@ -27,17 +26,22 @@ const QuickDisplay=(props)=>{
                 )
             })
         }
-
     }
 
     return(
         <div>
-            <p>Quick Search</p>
-            <p>discover your trip with us</p>
-            <br/>
-            {listTrip(props)}
+            <div className="quickSearchContainer">
+                <p className="quickSearchHeding">
+                    Quick Search
+                </p>
+                <p className="quickSearchSubHeding">
+                    Discover Trip By Type
+                </p>
+                <br/>
+                {listTrip(props)}
+            </div>
         </div>
     )
-
 }
+
 export default QuickDisplay;

@@ -5,7 +5,6 @@ import './Listing.css';
 const ListingDisplay = (props) => {
     const renderList =({listdata}) => {
         if(listdata){
-            console.log(listdata)
             if(listdata.length==0){
                 return(
                     <div>
@@ -57,6 +56,7 @@ const ListingDisplay = (props) => {
             <div className="main-heading">
                 <div className="row">
                     <div className="col-md-12">
+                        
                         {renderList(props)}
                     </div>
                 </div>
